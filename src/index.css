@@ -12,3 +12,46 @@
     margin: 0;
   }
 }
+
+@media print {
+  @page {
+    margin: 20mm;
+  }
+  
+  body {
+    background: white !important;
+  }
+
+  input {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure table borders are visible and crisp in print */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #cbd5e1 !important; /* slate-300 */
+    color: black !important;
+  }
+
+  /* Remove background colors that might not print well or waste ink */
+  .bg-slate-100, .bg-slate-50 {
+    background-color: transparent !important;
+  }
+
+  /* Force display of the logo container background */
+  .bg-slate-900 {
+    background-color: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
